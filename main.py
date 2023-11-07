@@ -13,3 +13,10 @@ with (column2):
     Hi, I am Anastasiya and everyone calls me Nastya
     """
     st.info(content)
+
+content_more = \
+    """
+Below you can find some of the apps I have built in Python. Feel free to contact me!
+    """
+
+st.write(content_more)
