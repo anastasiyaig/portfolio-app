@@ -30,14 +30,20 @@ Below you can find some of the apps I have built in Python. Feel free to contact
 st.caption(content_more)
 
 
-column3, column4 = st.columns(2)
+column3, empty_cl, column4 = st.columns([1.5, 0.5, 1.5])
 
 dataframe = pandas.read_csv("data.csv", sep=";")
 
 with column3:
     for index, row in dataframe[:10].iterrows():
         st.header(row["title"])
+        st.write(row['description'])
+        st.image("images/" + row['image'])
+        st.write(f"[Source Code]({row['url']})")
 
 with column4:
     for index, row in dataframe[10:].iterrows():
         st.header(row["title"])
+        st.write(row['description'])
+        st.image("images/" + row['image'])
+        st.write(f"[Source Code]({row['url']})")
