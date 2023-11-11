@@ -1,12 +1,13 @@
 import streamlit as st
 import pandas
 
-st.set_page_config(layout="wide")
+st.set_page_config(layout="wide",
+                   page_title='Home page')
 
-column1, column2 = st.columns(2)
+column1, column2 = st.columns(2, gap='small')
 
 with column1:
-    st.image("images/IMG_8240.jpg")
+    st.image("images/camphoto_1144747756.jpeg", width=400)
 
 with (column2):
     st.title("Anastasiya S")
