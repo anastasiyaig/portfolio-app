@@ -1,4 +1,5 @@
 import streamlit as st
+from send_email import send_email
 
 st.header("Contact Me")
 
@@ -14,6 +15,13 @@ with st.form(key="contact_form"):
     submit_button = st.form_submit_button(
         label="Send"
     )
+
+    composed_message = f"""\
+Subject: Portfolio App
+
+From: {visitor_email}
+{visitor_message}
+"""
     if submit_button:
-        email_content = visitor_email + visitor_message
-        pass
+        send_email(composed_message)
+        st.info("Your message has been just sent!")
