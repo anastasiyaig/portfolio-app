@@ -1,13 +1,14 @@
 import certifi
 import smtplib
 import ssl
+import os
 
 
 def send_email(composed_message):
     host = "smtp.gmail.com"
     port = 465
     sender_email = 'anastasija.edu1@gmail.com'  # the mailbox u can manage and has access / password to
-    sender_password = 'lela jags xeci ssxg'  # app password im Gmail Account settings
+    sender_password = os.getenv('GMAIL_PASSWORD')  # app password im Gmail Account settings
     email_receiver = 'anastasija.edu1@gmail.com'  # could be any
     context = ssl.create_default_context(cafile=certifi.where())
 
